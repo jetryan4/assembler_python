@@ -13,10 +13,12 @@
 #must be placed in a function to call file input name
 #and return output
 
-# The program can be simply run by navigating to the very bottom and
-# changing the requested file path and names to the desired values
-# The function is called:
-#  read_in_write_out_assembly_to_machine(infile, outfile)
+# The program can be simply run by the commandline
+# the program needs to be compiled on a linux machine with the command
+# $ chmod +x myAssembler.py
+# then excuted by:
+# $ ./myAssembler.py *.s
+# outputs *.obj
 
 
 import logging
@@ -310,11 +312,13 @@ def read_in_write_out_assembly_to_machine(infile, outfile):
 # To test the program all that is required is updating the file paths
 # and names to the desired results
 def main():
-    if len(sys.argv) > 1:
+    if len(sys.argv) == 2:
         # argv[1] has your filename
         filenamein = sys.argv[1]
         filenameout = filenamein.replace('.s', '.obj')
         read_in_write_out_assembly_to_machine(filenamein, filenameout)
-
+    else:
+        print("Please only input one test file with proper input *.s format")
+        sys.exit()
 if __name__ == "__main__":
     main()
