@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 #python script for converting assembly to machine code
 #Jet Ryan
 
@@ -307,4 +309,12 @@ def read_in_write_out_assembly_to_machine(infile, outfile):
 
 # To test the program all that is required is updating the file paths
 # and names to the desired results
-read_in_write_out_assembly_to_machine('test_case3.s', 'results.obj')
+def main():
+    if len(sys.argv) > 1:
+        # argv[1] has your filename
+        filenamein = sys.argv[1]
+        filenameout = filenamein.replace('.s', '.obj')
+        read_in_write_out_assembly_to_machine(filenamein, filenameout)
+
+if __name__ == "__main__":
+    main()
