@@ -309,8 +309,9 @@ def read_in_write_out_assembly_to_machine(infile, outfile):
     #print(mips_converted)
 
 
-# To test the program all that is required is updating the file paths
-# and names to the desired results
+# To test the program from commandline follow the top instructions
+# the program can also be tested by commenting out the code from:
+# here ..........................................................
 def main():
     if len(sys.argv) == 2:
         # argv[1] has your filename
@@ -322,3 +323,14 @@ def main():
         sys.exit()
 if __name__ == "__main__":
     main()
+
+# to here.............................................................
+# and instead uncomennent the line below and run the python executable
+# with files in and out just change the namess and make sure they
+# in the same directory as the file
+
+#uncomment from here ..................................................
+# in_file = 'test_case3.s'
+# out_file = 'res.obj'
+# read_in_write_out_assembly_to_machine(in_file, out_file)
+#to here ...............................................................
